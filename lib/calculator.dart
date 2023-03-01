@@ -218,8 +218,8 @@ class _CalculatorPageState extends State<CalculatorPage> {
                         fillColor: Colors.black,
                         focusColor: Colors.red,
                       ),
-                      validator: (value) {
-                        if (value!.isEmpty || int.parse(value!) <= 10) {
+                      validator: (String? value) {
+                        if (value!.isEmpty || int.parse(value) <= 10) {
                           return "L'âge doit être supérieur à 10";
                         }
                         return null;
