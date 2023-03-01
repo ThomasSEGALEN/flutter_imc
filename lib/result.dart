@@ -11,22 +11,8 @@ class ResultPage extends StatelessWidget {
   Widget build(BuildContext context) {
     final Imc imc = ModalRoute.of(context)!.settings.arguments as Imc;
 
-    String imcText = "Corpulance normale";
-    double imcValue = imc.weight / pow(imc.height / 100, 2);
-
-    if (imcValue < 18.5) {
-      imcText = "Insuffisance pondérale";
-    } else if (imcValue >= 18.5 || imcValue < 25) {
-      imcText = "Corpulence normale";
-    } else if (imcValue >= 25 || imcValue < 30) {
-      imcText = "Surpoids";
-    } else if (imcValue >= 30 || imcValue < 35) {
-      imcText = "Obésité modérée";
-    } else if (imcValue >= 35 || imcValue < 40) {
-      imcText = "Obésité sévère";
-    } else if (imcValue >= 40) {
-      imcText = "Obésité morbide ou massive";
-    }
+    double imcValue = imc.calc;
+    String imcText = imc.message;
 
     return Scaffold(
       appBar: AppBar(
