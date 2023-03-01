@@ -11,7 +11,7 @@ class CalculatorPage extends StatefulWidget {
 }
 
 class _CalculatorPageState extends State<CalculatorPage> {
-  Imc imc = Imc(gender: Gender.male, height: 144, weight: 70);
+  Imc imc = Imc(gender: Gender.female, height: 144, weight: 70);
   bool _genderState = true;
   final _formKey = GlobalKey<FormState>();
   final _inputController = TextEditingController();
